@@ -1,0 +1,149 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/style.css' %}">
+<link rel="stylesheet" href="{% static 'app/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img src="{% static 'app/myPicture.png' %}" alt="my_image" width="auto" height="150px" >
+                </div>
+                <h2>Precious Onyewuchi</h2>
+                <span style="font-weight: 500;font-size: 14px;">Backend Web Developer</span>
+            </div>
+
+            <div class="contactInfo education">
+                <h3 class="title"> Education </h3>
+                <ul>
+                    <li>
+                        <h5>2016-2021</h5>
+                        <br>
+                        <h4>Bachelors Degree in Computer Science</h4>
+                        <h4>Enugu State University of Science and Technology</h4>
+                    </li>
+            </div>
+
+            <div class="contactInfo language">
+                <h3 class="title"> Languages </h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width:90%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo">
+                <h3 class="title">Send me a message!</h3>
+                {% block content %}
+                    <form method="POST" class="ContactForm">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="submitButton"> Submit </button>
+                    </form>
+                {% endblock %}
+            </div>
+
+        </div>
+
+        <div class="right_side">
+
+            <h2 class="title2">My Bio</h2>
+            <div class="about">
+                <br>
+                <p id="about">
+                    I am a python Developer who is learning to use Django which is a python framework,
+                    to write code for backend web applications. I recently started learning and is currently open to whatever 
+                    opportunities might be helpful to help speed up and facilitate my learning process.
+                    I am willing to push myself to know how far i can go if i think something is worth it.
+                </p>
+            </div>
+
+            <h2 class="title2">Experience</h2>
+            <div class="about-row">
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2019</h5>
+                        <h4>Wonestack Nig. Limited</h4>
+                    </div>
+                    <div class="text">
+                        <h5>Intern</h5>
+                        <br>
+                        <p>
+                            I interned at the company and used the frontend web technologies; HTML and CSS to build responsive websites.
+                            I am currently learning to use python and its django framework. <a href="www.github.com/preshh0" style="text-decoration: none; color:black;"> Click here to go to my github page.</a>
+                        </p>        
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="title2">Professional Skills</h2>
+            <div class="about skills">
+                <br>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="percent">
+                        <div style="width:90%"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width:70%"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Python</h4>
+                    <div class="percent">
+                        <div style="width:65%"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Django</h4>
+                    <div class="percent">
+                        <div style="width:50%"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Communication</h4>
+                    <div class="percent">
+                        <div style="width:50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about interest">
+                <h2 class="title2">Interests</h2>
+                <ul>
+                    <li><i class="fa fa-book" aria-hidden="true"></i> Reading</li>
+                    <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Writing</li>
+                    <li><i class="fa fa-search-plus" aria-hidden="true"></i>Learning and Trying out new things. </li>
+                </ul>
+            </div>
+
+            <footer>
+                <h2>Sponsored by: <img src="{% static 'app/zuriLogo.jpg' %}" alt="zuriLogo" width="100%" height="auto" ></h2>
+                <br>
+                <div class="about socials interest">
+                    <ul style="margin-left:200px;">
+                        <li> <a href="www.twitter.com/preshh0">  <i class="fa fa-twitter" aria-hidden="true"></i>  </a></li>
+                        <li> <a href="uniquep201@gmail.com">  <i class="fa fa-envelope-open" aria-hidden="true"></i>  </a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
