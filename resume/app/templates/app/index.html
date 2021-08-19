@@ -48,7 +48,7 @@
             <div class="contactInfo">
                 <h3 class="title">Send me a message!</h3>
                 {% block content %}
-                    <form method="POST">
+                    <form method="POST" class="ContactForm">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="submitButton"> Submit </button>
