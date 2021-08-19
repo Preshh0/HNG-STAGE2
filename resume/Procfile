@@ -1,1 +1,1 @@
-web: gunicorn stagetwotasks.wsgi
+web: gunicorn resume.wsgi
