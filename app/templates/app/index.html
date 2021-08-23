@@ -1,18 +1,7 @@
+{% extends "app/base.html" %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'app/style.css' %}">
-<link rel="stylesheet" href="{% static 'app/font-awesome-4.7.0/css/font-awesome.min.css' %}">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-</head>
-<body>
-    <div class="container">
+    {% block content %}
         <div class="left_side">
             <div class="profileText">
                 <div class="imgBx">
@@ -47,13 +36,11 @@
 
             <div class="contactInfo">
                 <h3 class="title">Send me a message!</h3>
-                {% block content %}
                     <form method="POST" class="ContactForm">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="submitButton"> Submit </button>
                     </form>
-                {% endblock %}
             </div>
 
         </div>
@@ -144,6 +131,4 @@
                 </div>
             </footer>
         </div>
-    </div>
-</body>
-</html>
+    {% endblock %}
